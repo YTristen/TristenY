@@ -54,6 +54,5 @@ const { title } = Astro.props;
       : "light";
   };
   const isDark = getThemePreference() === "theme-dark";
-  console.log("isDark-init", isDark, new Date());
   document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
 </script>

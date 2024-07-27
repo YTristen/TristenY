@@ -7,11 +7,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
 import Hero from "../components/Hero.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Page section components
-import Me from "../../public/assets/backgrounds/me.png";
-import ArticleTags from "../components/ArticleTags";
+// import ArticleTags from "../components/ArticleTags";
 import ResearchPreview from "../components/ResearchPreview.astro";
 
 // Content Fetching: List four most recent work projects
@@ -20,13 +18,13 @@ const articles = (await getCollection("articles"))
   .slice(0, 4);
 
 
-const projects = (await getCollection("projects"))
-  .sort(
-    (a: any, b: any) =>
-      (new Date(b.data.publishDate) as any) -
-      (new Date(a.data.publishDate) as any)
-  )
-  .slice(0, 4);
+// const projects = (await getCollection("projects"))
+//   .sort(
+//     (a: any, b: any) =>
+//       (new Date(b.data.publishDate) as any) -
+//       (new Date(a.data.publishDate) as any)
+//   )
+//   .slice(0, 4);
 
 const researches = (await getCollection("researches"))
   .sort(
@@ -37,21 +35,21 @@ const researches = (await getCollection("researches"))
   .slice(0, 4);
 
 
-// 文章总数
-const articleCount = (await getCollection("articles")).length;
+// // 文章总数
+// const articleCount = (await getCollection("articles")).length;
 
-// 项目总数
-const projectCount = (await getCollection("projects")).length;
+// // 项目总数
+// const projectCount = (await getCollection("projects")).length;
 
 // 研究总数
 const researchCount = (await getCollection("researches")).length;
 
-let articleTags = (await getCollection("articles"))
-  .map((article) => article.data.tags)
-  .flat();
+// let articleTags = (await getCollection("articles"))
+//   .map((article) => article.data.tags)
+//   .flat();
 
 // Remove duplicate tags
-articleTags = [...new Set(articleTags)];
+// articleTags = [...new Set(articleTags)];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -68,18 +66,13 @@ articleTags = [...new Set(articleTags)];
         >
         </Hero>
         <Image
-          src={Me}
-          alt="Licodeao's photo"
+          src="/assets/backgrounds/me.png"
+          alt="TristenY‘s avatar"
           width="450"
           height="450"
           class="avatar"
         />
       </header>
-      
-      {
-        articleTags.length > 0 && <ArticleTags tags={articleTags}></ArticleTags>
-      }
-      
     </div>
     <main class="with-background bg-variant wrapper">
       <header class="mb-14 text-center md:mb-20">
@@ -91,19 +84,6 @@ articleTags = [...new Set(articleTags)];
         ))}
       </div>
     </main>
-
-    {articles.length > 0 && (
-      <main class="with-background bg-variant wrapper">
-      <header class="mb-14 text-center md:mb-20">
-        <h3>Recent Articles</h3>
-      </header>
-      <div class="outputContainer px-5">
-        {articles.map((article) => (
-          <PortfolioPreview articles={article}/>
-        ))}
-      </div>
-    </main>
-    )}
   </div>
 </BaseLayout>
 

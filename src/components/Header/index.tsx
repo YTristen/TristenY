@@ -52,8 +52,8 @@ const Header = () => {
               alt="Logo"
               src={
                 theme === "dark"
-                  ? "../../../public/assets/backgrounds/logo_dark.png"
-                  : "../../../public/assets/backgrounds/logo_light.png"
+                  ? "/assets/backgrounds/logo_dark.png"
+                  : "/assets/backgrounds/logo_light.png"
               }
             />
           </NavbarBrand>

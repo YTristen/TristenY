@@ -4,6 +4,6 @@
     "strict": false,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "allowSyntheticDefaultImports": true
+    // "allowSyntheticDefaultImports": true
   }
 }

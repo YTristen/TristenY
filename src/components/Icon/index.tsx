@@ -15,12 +15,15 @@ const Icon = (props: Props) => {
   const iconPath = iconPaths[icon];
 
   const attrs: HTMLAttributes<"svg"> = {};
+  // 关闭ts检查
+  // @ts-ignore
   if (size) attrs.style = { "--size": size };
 
   const gradientId =
     "icon-gradient-" + Math.round(Math.random() * 10e12).toString(36);
 
   return (
+    // @ts-ignore
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="40"

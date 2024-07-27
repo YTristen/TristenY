@@ -13,7 +13,6 @@ const ThemeToogle = (props: Props) => {
   };
   useEffect(() => {
     const dark = isDark();
-    console.log("Tristen-Component", dark, localStorage.getItem("theme"));
     if (!dark && localStorage.getItem("theme") === "theme-dark") {
       props.setTheme("dark");
       document.documentElement.classList["add"]("theme-dark");
@@ -22,7 +21,6 @@ const ThemeToogle = (props: Props) => {
 
   const handleChange = () => {
     const dark = !isDark();
-    console.log("Tristen-COmponemt", dark);
     props.setTheme(dark ? "dark" : "light");
     document.documentElement.classList[dark ? "add" : "remove"]("theme-dark");
     themeToogleRef?.current.setAttribute("aria-pressed", String(dark));
