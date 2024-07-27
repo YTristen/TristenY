@@ -1,0 +1,80 @@
+.myToggleIcon,
+.myToggleIcon::before,
+.myToggleIcon::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.myToggleIcon::before {
+  transform: translateY(-8px);
+  position: absolute;
+}
+
+.myToggleIcon::after {
+  transform: translateY(8px);
+  position: absolute;
+}
+
+.myToggleIconOpen {
+  background-color: transparent;
+}
+
+.myMenu {
+  position: relative;
+  flex-direction: row;
+  border: 0;
+  padding: 0.25rem 0.625rem;
+  background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
+  box-shadow: var(--shadow-md);
+  height: auto;
+  backdrop-filter: none;
+}
+
+.myMenuRight {
+  a {
+    display: inline;
+  }
+}
+.myMenuIcon {
+  display: flex;
+  padding: var(--icon-padding);
+  color: var(--accent-dark);
+  transition: color var(--theme-transition);
+  font-size: 1.8rem;
+}
+
+.navBase {
+  backdrop-filter: none;
+  backdrop-filter: blur(0) !important;
+  --tw-backdrop-blur: 0 !important;
+}
+
+.myMenuItem a {
+  color: var(--gray-300);
+  padding: 0.5rem 1rem;
+  border-radius: 999rem;
+  transition: all var(--theme-transition);
+}
+
+.myMenuItem a:hover {
+  background-color: var(--accent-overlay);
+  color: var(--gray-100);
+}
+
+.myMenuItem .text-primary {
+  color: var(--accent-text-over) !important;
+  background-color: var(--accent-regular) !important;
+}
+.MobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: var(--text-md);
+  line-height: 1.2;
+  list-style: none;
+  padding: 2rem;
+  background-color: var(--gray-999);
+  opacity: 0.96;
+}

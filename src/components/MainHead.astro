@@ -1,0 +1,59 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="generator" content={Astro.generator} />
+<!-- Title -->
+
+<title>{title}</title>
+
+<ViewTransitions />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<script is:inline>
+  window.smartlook ||
+    (function (d) {
+      var o = (smartlook = function () {
+          o.api.push(arguments);
+        }),
+        h = d.getElementsByTagName("head")[0];
+      var c = d.createElement("script");
+      o.api = new Array();
+      c.async = true;
+      c.type = "text/javascript";
+      c.charset = "utf-8";
+      c.src = "https://web-sdk.smartlook.com/recorder.js";
+      h.appendChild(c);
+    })(document);
+  smartlook("init", "00d9c31b4947536c3136eb394e895fc4ace90153", {
+    region: "eu",
+  });
+</script>
+
+<script is:inline>
+  // This code is inlined in the head to make dark mode instant & blocking.
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "theme-dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "theme-dark";
+  console.log("isDark-init", isDark, new Date());
+  document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
+</script>
