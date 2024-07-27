@@ -53,4 +53,4 @@ jobs:
           # 该步骤会将项目中 FOLDER 指定文件夹下的文件推送到 BRANCH 分支，作为Github Pages 部署的内容。
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages # The branch the action should deploy to.
-          folder: .vuepress/dist # The folder the action should deploy.
+          folder: dist # The folder the action should deploy.
