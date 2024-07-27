@@ -100,7 +100,7 @@ const Header = () => {
               key={`${item}-${index}`}
               className="myMenuItem font-bold"
             >
-              <Link href="#" color="foreground">
+              <Link href={item.href} color="foreground">
                 {item.name}
               </Link>
             </NavbarItem>
