@@ -1,5 +1,5 @@
-export function formatDate(date) {
-  function padZero(n) {
+export function formatDate(date: Date) {
+  function padZero(n: number) {
     return n < 10 ? "0" + n : n;
   }
 
