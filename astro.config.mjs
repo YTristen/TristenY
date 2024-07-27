@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/TristenY/",
   integrations: [react(), tailwind()],
   site: "https://tristen.icu",
 
