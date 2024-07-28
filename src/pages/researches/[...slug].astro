@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Icon from "../../components/Icon.astro";
 import Hero from "../../components/Hero.astro";
 import Pill from "../../components/Pill.astro";
-
+import Comment from "../../components/Comment";
 interface Props {
   entry: CollectionEntry<"researches">;
 }
@@ -58,7 +58,9 @@ const { Content } = await entry.render();
           }
           <div class="content">
             <Content />
+            <Comment client:load/>
           </div>
+          
         </div>
       </main>
     </div>
