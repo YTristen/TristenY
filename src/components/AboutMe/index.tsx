@@ -7,6 +7,7 @@ const AboutMe = () => {
   useEffect(() => {
     setTheme(localStorage.getItem("theme"));
     window.addEventListener("theme-change", (e) => {
+      // @ts-ignore
       setTheme(e.detail ? "theme-dark" : "light");
     });
     return () => {
