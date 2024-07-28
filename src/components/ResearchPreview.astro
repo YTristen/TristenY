@@ -1,7 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Pill from "./Pill.astro";
-
 interface Props {
   researches: CollectionEntry<"researches">;
 }
@@ -12,7 +10,7 @@ const { data, slug } = Astro.props.researches;
 <a class="card" href={`/researches/${slug}`}>
   <span class="title">{data.title}</span>
   <div class="publisher">
-    <div class="title">
+    <div class="title text-xl">
       {data.tags.map((t: string) => <span>{t}</span>)}
     </div>
   </div>
@@ -28,7 +26,6 @@ const { data, slug } = Astro.props.researches;
   .card {
     display: grid;
     grid-template: auto 1fr / auto 1fr;
-    height: 11rem;
     background: var(--gradient-subtle);
     border: 1px solid var(--gray-800);
     border-radius: 0.75rem;

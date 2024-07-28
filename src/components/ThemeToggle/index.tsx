@@ -25,6 +25,8 @@ const ThemeToogle = (props: Props) => {
     document.documentElement.classList[dark ? "add" : "remove"]("theme-dark");
     themeToogleRef?.current.setAttribute("aria-pressed", String(dark));
     localStorage.setItem("theme", dark ? "theme-dark" : "light");
+    // 全局发送事件， 传递参数
+    window.dispatchEvent(new CustomEvent("theme-change", { detail: dark }));
   };
   return (
     <button className="ThemeToogle" onClick={handleChange} ref={themeToogleRef}>

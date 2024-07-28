@@ -4,7 +4,7 @@ author: Lishuang Zhan, Enting Ying, Jiabao Gan, Shihui Guo*, Boyu Gao, Yipeng Qi
 img: /assets/researches/SAT/acmmm_satpose.jpg
 publishDate: '2024-07-18'
 tags:
-  - ACM MM 2024
+  - Proceedings of the 32st ACM International Conference on Multimedia (ACM MM), 2024
 ---
 
 <p align="center"><strong></strong></p>

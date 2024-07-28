@@ -13,5 +13,5 @@ export const IconLinks: {
   icon: keyof typeof iconPaths;
 }[] = [
   { label: "GitHub", href: "https://github.com/ytristen", icon: "github-logo" },
-  { label: "RSS", href: "/rss.xml", icon: "rss" },
+  { label: "Email", href: "mailto:tristenying@163.com", icon: "email" },
 ];
