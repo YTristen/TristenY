@@ -56,7 +56,7 @@ const { Content } = await entry.render();
               <img src={entry.data.img} alt={entry.data.img_alt || ""} />
             )
           }
-          <div class="content">
+          <div>
             <Content />
             <Comment client:load/>
           </div>

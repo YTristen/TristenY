@@ -29,7 +29,7 @@ const Comments = () => {
   }, [])
 
   return (
-    <div id={id} className="w-full">
+    <div id={id} className="w-full mt-8">
       {mounted ? (
         <Giscus
           id={id}
