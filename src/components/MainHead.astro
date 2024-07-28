@@ -48,10 +48,10 @@ const { title } = Astro.props;
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
+    } else {
+      localStorage.setItem("theme", "theme-dark");
+      return "theme-dark";
     }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "theme-dark"
-      : "light";
   };
   const isDark = getThemePreference() === "theme-dark";
   document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
