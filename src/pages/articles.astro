@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+import ArticlePreview from "../components/ArticlePreview.astro";
+
+const micros = (await getCollection("micros")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="My Articles | Tristen"
+>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      <Hero title="My Articles" tagline="Some Interesting Research on Human-Computer Interaction" align="start" />
+      <Grid variant="offset">
+        {
+          micros.map((research) => (
+            <li>
+              <ArticlePreview  type="micros" micros={research} />
+            </li>
+          ))
+        }
+      </Grid>
+    </main>
+  </div>
+</BaseLayout>

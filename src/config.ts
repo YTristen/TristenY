@@ -2,7 +2,7 @@ import type { iconPaths } from "./utils/IconPaths";
 
 export const Navigation  = [
   { name: '首页', href: '/' },
-  { name: '文章', href: '/blog' },
+  { name: '文章', href: '/articles' },
   { name: '研究', href: '/researches' },
   { name: '关于我', href: '/about' },
 ]
